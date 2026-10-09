@@ -3,6 +3,6 @@
   "description": "A Swiss knife of encodings (plain, hex, a85, b64, zlib, rot13) that caches conversions. It may leak other users' data.",
   "question": "Retrieve the flag from the challenge service.",
   "category": "PWN",
-  "difficulty": 4,
+  "difficulty": 3,
   "evidence_kind": "SECRET"
 }
