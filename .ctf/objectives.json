@@ -1,0 +1,60 @@
+{
+  "objectives": [
+    {
+      "key": "main",
+      "title": "Read the flag",
+      "prompt": "Abuse the encoding cache to take over the converter and read /flag.",
+      "check": {
+        "evidence": "SECRET",
+        "format": "CTF{%s}"
+      },
+      "dev": "CTF{dev-google-ctf-2024-knife}",
+      "hints": [
+        "Conversions are cached by a hash: are two encodings of the same data always the same key?",
+        "The flag's own words name the encoding property to look for."
+      ],
+      "steps": [
+        {
+          "key": "hash",
+          "title": "Identify the cache key",
+          "prompt": "Which hash function keys the conversion cache?",
+          "check": {
+            "answer": [
+              "sha256",
+              "sha-256",
+              "sha2",
+              "sha-2"
+            ]
+          }
+        },
+        {
+          "key": "encoding",
+          "title": "Find the odd encoding",
+          "prompt": "Which of the supported encodings is a home-made variant? (name)",
+          "check": {
+            "answer": [
+              "ascii85",
+              "a85",
+              "base85",
+              "ascii85 variant"
+            ]
+          }
+        },
+        {
+          "key": "property",
+          "title": "Name the property",
+          "prompt": "What do you call an encoding where several strings decode to the same bytes?",
+          "check": {
+            "answer": [
+              "non-canonical",
+              "noncanonical",
+              "non canonical",
+              "non-canonical encoding",
+              "malleable"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
