@@ -1,8 +1,11 @@
 {
+  "project_name": "cyberlabs-google-ctf-2024-knife",
+  "slug": "google-ctf-2024-knife",
   "title": "Google CTF 2024: knife",
   "description": "A Swiss knife of encodings (plain, hex, a85, b64, zlib, rot13) that caches conversions. It may leak other users' data.",
-  "question": "Abuse the converter's encoding cache to get code execution and read /flag.",
-  "category": "PWN",
+  "category": "pwn",
   "difficulty": 3,
-  "evidence_kind": "SECRET"
+  "evidence_kind": "SECRET",
+  "capabilities": [],
+  "question": "Abuse the converter's encoding cache to get code execution and read /flag."
 }
